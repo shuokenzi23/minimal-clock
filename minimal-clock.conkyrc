@@ -1,0 +1,41 @@
+# Standard antiX .conkyrc file
+# For conky editing help and commands visit = Casey's Conky Reference with Examples {http://www.ifxgroup.net/conky.htm}
+
+# --- Global Settings ---
+background yes                        # Fork Conky into the background on startup
+update_interval 1.0                   # Refresh rate in seconds
+cpu_avg_samples 2                     # Number of samples to average for CPU monitoring
+net_avg_samples 2                     # Number of samples to average for net bandwidth
+no_buffers yes                        # Subtract file system buffers from used memory
+
+# --- Window Position & Sizing ---
+alignment middle_right                # Anchor position on the screen
+gap_x 300                             # Horizontal gap from the anchor edge (in pixels)
+gap_y 200                             # Vertical gap from the anchor edge (in pixels)
+minimum_size 1000 250                 # Minimum width and height of the window
+maximum_width 1000                    # Maximum width allowed for the window
+
+# --- Graphical Tweaks & Transparency ---
+own_window yes                        # Give Conky its own window instead of drawing on desktop
+own_window_class Conky                # Set the window class name
+own_window_type normal                # Changed from 'override' to 'normal' for better desktop integration
+own_window_transparent yes            # Enable true/pseudo transparency
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager # Remove borders, keep below windows, keep on all workspaces
+
+# --- Font and Colors ---
+use_xft yes                           # Use X FreeType fonts (allows custom fonts and antialiasing)
+uppercase yes                         # Force all text rendering to uppercase
+xftalpha 1                            # Alpha/opacity level for XFT fonts (1 is fully opaque)
+draw_shades no                        # Disable text shading
+draw_outline no                       # Disable text outlining
+draw_borders no                       # Disable window borders
+draw_graph_borders no                 # Disable borders around any graphical elements
+default_color white                   # Base color for all text elements
+
+# --- Layout Output ---
+TEXT
+# Centers and renders the current day using the stylized Anurati font (Size 60)
+${alignc}${font Anurati:size=60}${time %A}${font}
+
+# Adds a 10-pixel vertical space, centers, and renders the current time in 12-hour format using Sans-Serif (Size 30)
+${voffset 10}${alignc}${font sans-serif:size=30}${time %I : %M}${font}
