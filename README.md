@@ -9,6 +9,7 @@ A sleek, modern, and minimalist desktop clock widget for antiX Linux (and other 
 ---
 
 ## Preview
+<img width="1366" height="768" alt="concky" src="https://github.com/user-attachments/assets/b1de28e2-7a81-4745-90e3-96aff175d071" />
 
 > **Note:** Add a screenshot of your actual desktop layout here! Name the image file `screenshot.png`, save it in your repository root folder, and uncomment the line below:
 ---
