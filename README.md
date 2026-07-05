@@ -4,7 +4,7 @@ A open source widget  code for concky
 
 A sleek, modern, and minimalist desktop clock widget for antiX Linux (and other light X11 environments) that displays the day of the week in a stylized geometric typeface with a clean digital clock centered directly underneath.
 
-![License](https://img.shields.io/github/license/mesh/minimal-conky-clock?color=blue)
+![License](https://img.shields.io/github/license/shuokenzi23/minimal-conky?color=blue)
 
 ---
 
