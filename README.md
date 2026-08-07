@@ -1,7 +1,15 @@
 # Minimal Clock 🕒
 
-A lightweight and elegant **Conky desktop clock widget** for Linux desktops.
-Designed for minimal X11 environments like antiX, but works with most Conky-supported setups.
+![Linux](https://img.shields.io/badge/platform-Linux-yellow?logo=linux)
+![Conky](https://img.shields.io/badge/widget-Conky-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+A lightweight and elegant desktop clock widget for Linux desktops.
+
+Supports both:
+
+- 🖥️ **X11** using Conky
+- 🌊 **Wayland** using Eww
 
 ## Preview
 
@@ -9,32 +17,12 @@ Designed for minimal X11 environments like antiX, but works with most Conky-supp
 
 ## ✨ Features
 
-- Clean minimalist desktop clock
-- Perfect text alignment using Conky positioning
+- Minimal desktop clock design
+- X11 and Wayland support
 - Lightweight and suitable for older hardware
-- Wallpaper-friendly transparent design
+- Transparent wallpaper-friendly style
 - Futuristic Anurati typography
-- Customizable colors and time format
-
-## 📦 Requirements
-
-- Linux with X11 support
-- Conky
-- Anurati font (recommended)
-
-Install Conky:
-
-```bash
-sudo apt install conky-all
-```
-
-Install the font:
-
-```bash
-mkdir -p ~/.local/share/fonts
-cp Anurati-Regular.otf ~/.local/share/fonts/
-fc-cache -fv
-```
+- Customizable appearance
 
 ## 🚀 Installation
 
@@ -45,61 +33,97 @@ git clone https://github.com/shuokenzi23/minimal-clock.git
 cd minimal-clock
 ```
 
-Backup your current Conky configuration:
+Run the installer:
 
 ```bash
-mv ~/.conkyrc ~/.conkyrc.backup
+chmod +x install.sh
+./install.sh
 ```
 
-Install the theme:
+The installer will ask:
 
-```bash
-cp .conkyrc ~/.conkyrc
+```
+1) X11 - Conky version
+2) Wayland - Eww version
 ```
 
-Start Conky:
+Choose the option matching your desktop session.
 
-```bash
-killall conky
-conky &
+---
+
+## 🖥️ X11 Version (Conky)
+
+Requirements:
+
+- Linux with X11
+- Conky
+- Anurati font (recommended)
+
+The installer automatically:
+
+- Installs Conky
+- Copies `.conkyrc`
+- Installs the font
+- Starts the clock
+
+---
+
+## 🌊 Wayland Version (Eww)
+
+The Wayland version uses **Eww (ElKowar's Wacky Widgets)** because Conky is designed for X11.
+
+Supported environments:
+
+- GNOME Wayland
+- KDE Wayland
+- Hyprland
+- Other Wayland desktops
+
+Eww files are located in:
+
 ```
+wayland-clock/
+```
+
+---
 
 ## ⚙️ Customization
 
-### 12/24 Hour Format
+### Change time format
 
-12-hour:
+Edit the widget configuration or Conky file depending on your version.
 
-```
-${time %I:%M %p}
-```
+### Change colors
 
-24-hour:
+For X11 edit `.conkyrc`.
 
-```
-${time %H:%M}
-```
-
-### Change Color
-
-Edit `.conkyrc`:
+For Wayland edit:
 
 ```
-default_color white
+wayland-clock/style.scss
 ```
+
+---
 
 ## 🖥️ Autostart
 
-Add Conky to your desktop startup applications:
+Add the following to your startup applications:
+
+X11:
 
 ```
-Name: Minimal Clock
-Command: conky
+conky
+```
+
+Wayland:
+
+```
+eww daemon
 ```
 
 ## 🤝 Credits
 
-Inspired by minimalist Conky themes and adapted for lightweight Linux systems.
+Inspired by minimalist desktop widgets and adapted for modern Linux systems.
 
 ## 📜 License
 
