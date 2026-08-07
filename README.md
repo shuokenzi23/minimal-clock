@@ -1,72 +1,106 @@
-# Minimal-clock
-A open source widget  code for concky
-# conky-minimal-clock
+# Minimal Clock 🕒
 
-A sleek, modern, and minimalist desktop clock widget for antiX Linux (and other light X11 environments) that displays the day of the week in a stylized geometric typeface with a clean digital clock centered directly underneath.
-
-![License](https://img.shields.io/github/license/shuokenzi23/minimal-conky?color=blue)
-
----
+A lightweight and elegant **Conky desktop clock widget** for Linux desktops.
+Designed for minimal X11 environments like antiX, but works with most Conky-supported setups.
 
 ## Preview
-<img width="1366" height="768" alt="concky" src="https://github.com/user-attachments/assets/b1de28e2-7a81-4745-90e3-96aff175d071" />
 
-> **Note:** Add a screenshot of your actual desktop layout here! Name the image file `screenshot.png`, save it in your repository root folder, and uncomment the line below:
----
+<img width="1366" height="768" alt="Minimal Clock Preview" src="https://github.com/user-attachments/assets/b1de28e2-7a81-4745-90e3-96aff175d071" />
 
-## Features
+## ✨ Features
 
-* **Perfect Alignment:** Uses precise `${alignc}` and `${voffset}` formatting instead of manual space-padding to ensure text stays perfectly centered at any resolution.
-* **True Desktop Integration:** Configured with `own_window_type override` to sit invisibly on top of your wallpaper without ugly borders, shadows, or panel obstructions.
-* **Typographic Focus:** Tailored around the geometric **Anurati** display font for an abstract, high-end look.
+- Clean minimalist desktop clock
+- Perfect text alignment using Conky positioning
+- Lightweight and suitable for older hardware
+- Wallpaper-friendly transparent design
+- Futuristic Anurati typography
+- Customizable colors and time format
 
----
+## 📦 Requirements
 
-## Requirements
+- Linux with X11 support
+- Conky
+- Anurati font (recommended)
 
-To get the exact look rendered by this theme, you must install the **Anurati** typeface:
+Install Conky:
 
-1. Download the **Anurati-Regular** font file (`.otf` or `.ttf`) from a free personal-use font repository.
-2. Create your local font directory (if it doesn't already exist):
-   ```bash
-   mkdir -p ~/.local/share/fonts
+```bash
+sudo apt install conky-all
+```
 
-    Move the downloaded font file into that directory and refresh your system font cache:
-    Bash
+Install the font:
 
-    cp /path/to/Anurati-Regular.otf ~/.local/share/fonts/
-    fc-cache -fv
+```bash
+mkdir -p ~/.local/share/fonts
+cp Anurati-Regular.otf ~/.local/share/fonts/
+fc-cache -fv
+```
 
-Installation
+## 🚀 Installation
 
-    Backup Your Existing Config:
-    If you already have a default antiX Conky setup, back it up first:
-    Bash
+Clone the repository:
 
-mv ~/.conkyrc ~/.conkyrc.bak
+```bash
+git clone https://github.com/shuokenzi23/minimal-clock.git
+cd minimal-clock
+```
 
-Deploy the New Theme:
-Copy the .conkyrc file from this repository directly into your user home folder:
-Bash
+Backup your current Conky configuration:
 
+```bash
+mv ~/.conkyrc ~/.conkyrc.backup
+```
+
+Install the theme:
+
+```bash
 cp .conkyrc ~/.conkyrc
+```
 
-Reload Conky:
-Kill any running instances and launch it fresh, or simply log out and log back into your session:
-Bash
+Start Conky:
 
-    killall conky && conky &
+```bash
+killall conky
+conky &
+```
 
-Configuration Tweaks
+## ⚙️ Customization
 
-    12-Hour vs 24-Hour Time: The default layout is configured for standard 12-hour formatting with an AM/PM marker (%I:%M %p). To change it to 24-hour military format, open .conkyrc and change the bottom time variable to ${time %H:%M}.
+### 12/24 Hour Format
 
-    Color Schemes: Change default_color white to any hex code (e.g., default_color #A8FFB2) to complement your current desktop wallpaper accent tones.
+12-hour:
 
-Credits
+```
+${time %I:%M %p}
+```
 
-    Base antiX structural logic rules adapted from Casey's Conky Reference.
+24-hour:
 
-License
+```
+${time %H:%M}
+```
 
-This project is open-source and available under the terms of the MIT License.
+### Change Color
+
+Edit `.conkyrc`:
+
+```
+default_color white
+```
+
+## 🖥️ Autostart
+
+Add Conky to your desktop startup applications:
+
+```
+Name: Minimal Clock
+Command: conky
+```
+
+## 🤝 Credits
+
+Inspired by minimalist Conky themes and adapted for lightweight Linux systems.
+
+## 📜 License
+
+MIT License. Free to use, modify, and share.
