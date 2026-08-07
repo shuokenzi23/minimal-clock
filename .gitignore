@@ -1,0 +1,30 @@
+# Backup files
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Conky runtime files
+.conkyrc.bak
+
+# Font cache files
+.fontconfig/
+
+# Linux desktop files
+.directory
+.Trash-*
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
