@@ -1,0 +1,10 @@
+(defwidget minimal-clock []
+  (box :class "clock"
+       :orientation "vertical"
+       (label :text "${time}")))
+
+(defwindow minimal-clock
+  :monitor 0
+  :geometry (geometry :width "200px" :height "80px" :anchor "top center")
+  :layer "overlay"
+  (minimal-clock))
